@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
+            android:name=".activity_account_created"
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
