@@ -7,6 +7,169 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/arrow_left"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="78dp"/>
+
+    <TextView
+        android:id="@+id/text_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="20dp"
+        android:text="Buat Akun Baru"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppins_medium"/>
+
+    <TextView
+        android:id="@+id/text_register_cta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/text_register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Lengkapi data dirimu di bawah ini untuk mulai menikmati kemudahan layanan GoNceng"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_regular"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/form_username_textfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_register_cta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="28dp"
+        app:boxCornerRadiusTopEnd="28dp"
+        app:boxCornerRadiusBottomEnd="28dp"
+        app:boxCornerRadiusBottomStart="28dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="1dp"
+        app:hintTextAppearance="@font/poppins_regular"
+        android:hint="Buat Username">
+        <EditText
+            android:id="@+id/form_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_regular"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/form_email_textfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/form_username_textfield"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="28dp"
+        app:boxCornerRadiusTopEnd="28dp"
+        app:boxCornerRadiusBottomEnd="28dp"
+        app:boxCornerRadiusBottomStart="28dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="1dp"
+        app:hintTextAppearance="@font/poppins_regular"
+        android:hint="Alamat Email">
+        <EditText
+            android:id="@+id/form_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_regular"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/form_password_textfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/form_email_textfield"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="28dp"
+        app:boxCornerRadiusTopEnd="28dp"
+        app:boxCornerRadiusBottomEnd="28dp"
+        app:boxCornerRadiusBottomStart="28dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="1dp"
+        app:hintTextAppearance="@font/poppins_regular"
+        android:hint="Password"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:id="@+id/form_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_regular"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/form_password_confirm_textfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/form_password_textfield"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="28dp"
+        app:boxCornerRadiusTopEnd="28dp"
+        app:boxCornerRadiusBottomEnd="28dp"
+        app:boxCornerRadiusBottomStart="28dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="1dp"
+        app:hintTextAppearance="@font/poppins_regular"
+        android:hint="Konfirmasi Password"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:id="@+id/form_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_regular"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCreateAccount"
         android:layout_width="0dp"
@@ -22,6 +185,8 @@
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/poppins_regular"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
