@@ -12,14 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
-            android:name=".activity_account_created"
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_account_created"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActicity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

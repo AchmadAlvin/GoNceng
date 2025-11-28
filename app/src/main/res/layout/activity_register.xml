@@ -162,7 +162,7 @@
         android:hint="Konfirmasi Password"
         app:passwordToggleEnabled="true">
         <EditText
-            android:id="@+id/form_password"
+            android:id="@+id/form_password_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"

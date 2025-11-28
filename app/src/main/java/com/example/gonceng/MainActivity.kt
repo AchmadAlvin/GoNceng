@@ -1,5 +1,6 @@
 package com.example.gonceng
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -17,11 +18,13 @@ class MainActivity : AppCompatActivity() {
         val buttonregister = findViewById<Button>(R.id.btnRegister)
 
         btnlogin.setOnClickListener {
-            // Habib
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         buttonregister.setOnClickListener {
-            // Alpian
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
