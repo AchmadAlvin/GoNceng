@@ -21,12 +21,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/gambar_onboarding"
+        android:src="@drawable/onboarding_image"
         app:layout_constraintBottom_toTopOf="@id/guideline_split"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/gambar_onboarding" />
+        tools:srcCompat="@drawable/onboarding_image" />
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
