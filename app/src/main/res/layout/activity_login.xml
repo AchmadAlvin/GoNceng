@@ -123,8 +123,8 @@
         android:textColor="@color/PrimaryColor"
         android:fontFamily="@font/poppins_medium" />
 
-
-
+<!---->
+<!--berikan flag agar main activity itu keluar bukan malah kemabli di login-->
 
 
 
