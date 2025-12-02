@@ -1,8 +1,10 @@
 package com.example.gonceng
 
+import android.content.Intent
 import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceManager
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,6 +24,8 @@ class InputLokasi : AppCompatActivity() {
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
         setContentView(R.layout.activity_input_lokasi)
 
+        val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
+
         mapView = findViewById(R.id.maps_views)
 
         mapView.setBuiltInZoomControls(false)
@@ -31,6 +35,11 @@ class InputLokasi : AppCompatActivity() {
         mapController.setZoom(13.2)
         val startPoint = GeoPoint(-7.8821, 111.5306)
         mapController.setCenter(startPoint)
+
+        button_pilih.setOnClickListener {
+            val intent = Intent(this, DetailPesananMobil::class.java)
+            startActivity(intent)
+        }
 
 
 
