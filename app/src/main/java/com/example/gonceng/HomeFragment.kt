@@ -39,15 +39,27 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
 
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val btnFood : CardView = view.findViewById(R.id.btnFood)
+
+        //hmm.. pake image apa card?
         val button_mobil : ImageView = view.findViewById(R.id.gambar_mobil)
+
         button_mobil.setOnClickListener {
             val intent = Intent(requireContext(), InputLokasi::class.java)
             startActivity(intent)
         }
+
+        btnFood.setOnClickListener{
+            val intent = Intent(requireContext(), FoodActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     companion object {
