@@ -37,7 +37,9 @@
             android:layout_width="match_parent"
             android:layout_height="0sp"
             android:layout_weight="1"
-            android:padding="16sp">
+            android:padding="16sp"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_chat">
 
         </androidx.recyclerview.widget.RecyclerView>
 

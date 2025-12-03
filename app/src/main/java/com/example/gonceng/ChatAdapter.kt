@@ -32,8 +32,6 @@ class ChatAdapter(private val list: List<ChatItem>) :
     }
 
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = list.size
 
 }
