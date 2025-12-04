@@ -2,7 +2,6 @@ package com.example.gonceng
 
 import android.content.Intent
 import android.os.Bundle
-import android.preference.Preference
 import android.preference.PreferenceManager
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -12,9 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 import org.osmdroid.config.Configuration
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
-import java.util.prefs.Preferences
 
-class InputLokasi : AppCompatActivity() {
+class InputLokasiMobil : AppCompatActivity() {
 //balajar lateinit
     private final lateinit var mapView: MapView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +20,7 @@ class InputLokasi : AppCompatActivity() {
         enableEdgeToEdge()
         val ctx = applicationContext
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
-        setContentView(R.layout.activity_input_lokasi)
+        setContentView(R.layout.activity_input_lokasi_mobil)
 
         val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
 
