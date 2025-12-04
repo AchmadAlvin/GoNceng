@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
+            android:name=".OrderDetailGeprek"
+            android:exported="false" />
+        <activity
+            android:name=".DetailGeprek"
+            android:exported="false" />
+        <activity
             android:name=".FoodActivity"
             android:exported="false" />
         <activity

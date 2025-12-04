@@ -1,6 +1,5 @@
 package com.example.gonceng
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,29 +7,16 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class FoodActivity : AppCompatActivity() {
+class DetailGeprek : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_food)
+        setContentView(R.layout.activity_detail_geprek)
 
-        val btnBack = findViewById<CardView>(R.id.btnBack)
-        val btnGeprek = findViewById<CardView>(R.id.btnGeprek)
-        val btnMieAyam = findViewById<CardView>(R.id.btnMieAyam)
+        val btnBackFood = findViewById<CardView>(R.id.btnBackFood)
 
-
-        btnBack.setOnClickListener {
+        btnBackFood.setOnClickListener {
             finish()
-        }
-
-        btnGeprek.setOnClickListener {
-            val intent = Intent(this, DetailGeprek::class.java)
-            startActivity(intent)
-        }
-
-        btnMieAyam.setOnClickListener {
-            val intent = Intent(this, DetailGeprek::class.java)
-            startActivity(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
