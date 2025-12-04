@@ -16,5 +16,9 @@ class ChatDetailActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tvDriverName).text = name
         findViewById<ImageView>(R.id.imgProfile).setImageResource(imageRes)
+
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener {
+            finish()
+        }
     }
 }
