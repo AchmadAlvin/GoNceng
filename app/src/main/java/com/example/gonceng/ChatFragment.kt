@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonceng.ChatItem
 import com.example.gonceng.ChatAdapter
+import android.content.Intent
 
 
 
@@ -54,10 +55,19 @@ class ChatFragment : Fragment() {
             ChatItem("Muhammad Driver", "Halo", "3.24 PM", R.drawable.profile)
         )
 
-        rv.adapter = ChatAdapter(chatList)
+        rv.adapter = ChatAdapter(chatList) {
+            item -> openChatDetail(item)
+        }
         rv.layoutManager = LinearLayoutManager(requireContext())
     }
 
+
+    private fun openChatDetail(item: ChatItem) {
+        val intent = Intent(requireContext(), ChatDetailActivity::class.java)
+        intent.putExtra("driverName", item.name)
+        intent.putExtra("driverImage", item.profileRes)
+        startActivity(intent)
+    }
 
     companion object {
         /**

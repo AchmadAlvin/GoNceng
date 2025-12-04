@@ -8,7 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 
 
-class ChatAdapter(private val list: List<ChatItem>) :
+class ChatAdapter(
+    private val list: List<ChatItem>,
+    private val onItemClick: (ChatItem) -> Unit
+    ) :
     RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
 
     class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -29,6 +32,10 @@ class ChatAdapter(private val list: List<ChatItem>) :
         holder.itemView.findViewById<TextView>(R.id.tvDriverName).text = item.name
         holder.itemView.findViewById<TextView>(R.id.tvLastMessage).text = item.lastMessage
         holder.itemView.findViewById<TextView>(R.id.tvChatTime).text = item.time
+
+        holder.itemView.setOnClickListener {
+            onItemClick(item)
+        }
     }
 
 
