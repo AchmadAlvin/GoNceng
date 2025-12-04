@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
-            android:name=".OrderDetailGeprek"
+            android:name=".OrderDetailGeprekJuara"
             android:exported="false" />
         <activity
             android:name=".DetailGeprek"

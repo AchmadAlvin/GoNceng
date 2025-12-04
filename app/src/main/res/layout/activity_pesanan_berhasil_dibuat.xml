@@ -19,7 +19,7 @@
         android:background="@drawable/rounded_button"
         app:backgroundTint="@null"
         android:backgroundTintMode="@null"
-        android:text="Pesan"
+        android:text="Oke!"
         android:textSize="18sp"
         android:textColor="@color/PrimaryColor"
         android:fontFamily="@font/poppins_medium" />
