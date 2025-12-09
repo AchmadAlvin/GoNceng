@@ -50,8 +50,15 @@ class HomeFragment : Fragment() {
         //hmm.. pake image apa card?
         val button_mobil : ImageView = view.findViewById(R.id.gambar_mobil)
 
+        val button_motor : ImageView = view.findViewById(R.id.gambar_motor)
+
         button_mobil.setOnClickListener {
             val intent = Intent(requireContext(), InputLokasiMobil::class.java)
+            startActivity(intent)
+        }
+
+        button_motor.setOnClickListener {
+            val intent = Intent(requireContext(), InputLokasiMotor::class.java)
             startActivity(intent)
         }
 
