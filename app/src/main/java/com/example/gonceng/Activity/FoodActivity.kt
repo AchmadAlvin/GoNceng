@@ -1,4 +1,4 @@
-package com.example.gonceng
+package com.example.gonceng.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.gonceng.DetailGeprek
+import com.example.gonceng.R
 
 class FoodActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

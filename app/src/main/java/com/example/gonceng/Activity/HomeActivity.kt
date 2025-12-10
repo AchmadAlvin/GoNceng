@@ -1,4 +1,4 @@
-package com.example.gonceng
+package com.example.gonceng.Activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.gonceng.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
