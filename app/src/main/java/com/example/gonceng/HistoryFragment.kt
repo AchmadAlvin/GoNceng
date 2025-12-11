@@ -1,6 +1,5 @@
 package com.example.gonceng
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gonceng.ChatItem
-import com.example.gonceng.ChatAdapter
-import android.content.Intent
-
-
+import com.example.gonceng.HistoryItem
+import com.example.gonceng.HistoryAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,10 +17,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ChatFragment.newInstance] factory method to
+ * Use the [HistoryFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ChatFragment : Fragment() {
+class HistoryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -42,32 +38,27 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        return inflater.inflate(R.layout.fragment_history, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val rv = view.findViewById<RecyclerView>(R.id.chatFragment)
+        val rv = view.findViewById<RecyclerView>(R.id.rvHistoryList)
 
-        val chatList = listOf(
-            ChatItem("Abdul Driver", "Halo", "11.58 AM", R.drawable.profile),
-            ChatItem("Jamal Driver", "Halo", "6.21 PM", R.drawable.profile),
-            ChatItem("Muhammad Driver", "Halo", "3.24 PM", R.drawable.profile)
+        val historyList = listOf(
+            HistoryItem("6 KM", "Politeknik Negeri Madiun o Demangan, Taman", R.drawable.motor),
+            HistoryItem("7 KM", "Politeknik Negeri Madiun o Dagangan, dagangan", R.drawable.mobil),
+            HistoryItem("1 KM", "Politeknik Negeri Madiun o Universitas Merdeka", R.drawable.motor),
+            HistoryItem("8 KM", "Politeknik Negeri Madiun o Universitas PGRI", R.drawable.mobil),
+            HistoryItem("8 KM", "Politeknik Negeri Madiun o Politeknik Negeri Madiun", R.drawable.motor),
+            HistoryItem("8 KM", "Politeknik Negeri Madiun o SMK 8 Madiun", R.drawable.mobil),
+            HistoryItem("12 KM", "Politeknik Negeri Madiun o Pasar Besar", R.drawable.motor),
+            HistoryItem("4 KM", "Politeknik Negeri Madiun o Alun-Alun Madiun", R.drawable.mobil)
         )
 
-        rv.adapter = ChatAdapter(chatList) {
-            item -> openChatDetail(item)
-        }
+        rv.adapter = HistoryAdapter(historyList)
         rv.layoutManager = LinearLayoutManager(requireContext())
-    }
-
-
-    private fun openChatDetail(item: ChatItem) {
-        val intent = Intent(requireContext(), ChatDetailActivity::class.java)
-        intent.putExtra("driverName", item.name)
-        intent.putExtra("driverImage", item.profileRes)
-        startActivity(intent)
     }
 
     companion object {
@@ -77,12 +68,12 @@ class ChatFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ChatFragment.
+         * @return A new instance of fragment HistoryFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ChatFragment().apply {
+            HistoryFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

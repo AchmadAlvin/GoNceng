@@ -18,6 +18,9 @@
         android:theme="@style/Theme.GoNceng">
         <activity
             android:name=".InputLokasiMobil"
+            android:exported="false"
+            />
+        <activity
             android:name=".DetailPesananMotor"
             android:exported="false" />
         <activity
