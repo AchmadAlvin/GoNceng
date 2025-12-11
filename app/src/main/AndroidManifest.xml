@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
-            android:name=".`InputLokasiMobil.Activity`"
+            android:name=".Activity.InputLokasiMobilActivity"
             android:exported="false"
             />
         <activity

@@ -19,6 +19,8 @@ import com.example.gonceng.R
 
 class FoodActivity : AppCompatActivity() {
 
+    // deklarasi variable yang akan digunakan
+    // lateinit digunakan untuk menginisialisasi variable sebelum digunakan
     private lateinit var adapter: FoodAdapter
     private lateinit var foodList: List<FoodItem>
 
@@ -30,7 +32,6 @@ class FoodActivity : AppCompatActivity() {
         // Membuat variable untuk mencari view pada layout dengan tipe dan idnya
         val btnBack = findViewById<CardView>(R.id.btnBack)
         val rvFood = findViewById<RecyclerView>(R.id.rvFood)
-        val etSearch = findViewById<EditText>(R.id.etSearch)
 
         // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
         btnBack.setOnClickListener {
@@ -63,37 +64,12 @@ class FoodActivity : AppCompatActivity() {
 
             // memulai OrderDetailFood dengan membawa data intent yang telah diatur
             startActivity(intent)
-
         }
 
         // mengatur layout manager dan adapter untuk RecyclerView, LinearLayoutManager digunakan untuk menampilkan item secara vertikal
         rvFood.layoutManager = LinearLayoutManager(this)
         // mengatur adapter untuk RecyclerView, FoodAdapter yang telah diatur sebelumnya
         rvFood.adapter = adapter
-
-        // addTextChangedListener digunakan untuk mengetahui perubahan teks di EditText
-        // menambahkan TextWatcher untuk menangani perubahan teks di EditText
-        etSearch.addTextChangedListener(object : TextWatcher {
-
-            // sebuah fungsi yang dipanggil sebelum teks berubah
-            // s merupakan parameter dari teks yang akan diubah
-            // CharSequence? merupakan tipe data yang digunakan untuk merepresentasikan urutan karakter
-            // start merupakan indeks awal dari teks yang akan diubah
-            // count merupakan jumlah karakter yang akan diubah
-            // after merupakan jumlah karakter yang akan ditambahkan
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            // sebuah fungsi yang dipanggil ketika teks berubah
-            // before merupakan jumlah karakter yang akan dihapus
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // Memanggil fungsi filterData dengan parameter yang sesuai
-                filterData(s.toString())
-            }
-
-            // sebuah fungsi yang dipanggil setelah teks berubah
-            // Editable? merupakan tipe data yang digunakan untuk merepresentasikan urutan karakter yang dapat diubah
-            override fun afterTextChanged(s: Editable?) {}
-        })
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
