@@ -25,7 +25,9 @@ class InputLokasiMobil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+//      inisialisasi context aplikas yakni ya halaman aplaikasi ini
         val ctx = applicationContext
+        //      configurasi osm
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
         setContentView(R.layout.activity_input_lokasi_mobil)
 //      inisialisasi variable layout
@@ -35,17 +37,17 @@ class InputLokasiMobil : AppCompatActivity() {
 
         val back_button : ImageView = findViewById<ImageView>(R.id.back_button)
 
-//      inisiaslisi mapview tadi yang masih belum ada isinya
+//      inisiaslisi mapview tadi yang masih belum ada isinya yang tadi masih lateinit
         mapView = findViewById(R.id.maps_views)
-//      menghilangkan ikon zoom default
+//      menghilangkan ikon zoom kayak - atau + default
         mapView.setBuiltInZoomControls(false)
 //      agar bisa nge zoom
         mapView.setMultiTouchControls(true)
-//      inisialisasi controller punya map
+//      inisialisasi controller punya map osm
         val mapController = mapView.controller
 //      digunakan untuk zoom berapa atu besarnya map atau ya gitulah
         mapController.setZoom(13.2)
-//      digunakan untuk geopoint atau dimananya mapview focusnya
+//      digunakan untuk geopoint atau dimananya mapview focusnya  letak deo pakai long dan lat
         val startPoint = GeoPoint(-7.8821, 111.5306)
 //      digunakan untuk menengahkan map focus di tengah
         mapController.setCenter(startPoint)
@@ -81,7 +83,7 @@ class InputLokasiMobil : AppCompatActivity() {
             }
 
         }
-//      ini back button udah paham
+//      ini back button untuk pindah ke halaman sebelumnya
         back_button.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
@@ -95,12 +97,12 @@ class InputLokasiMobil : AppCompatActivity() {
             insets
         }
     }
-
+//  mapview lifecycle onresume
     override fun onResume() {
         super.onResume()
         mapView.onResume()
     }
-
+// mapview lifecycle onpause
     override fun onPause() {
         super.onPause()
         mapView.onPause()
