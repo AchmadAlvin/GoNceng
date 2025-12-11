@@ -28,7 +28,7 @@
         android:src="@drawable/arrow_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#000000" />
+        />
 
     <!-- Profile Image -->
     <androidx.cardview.widget.CardView
