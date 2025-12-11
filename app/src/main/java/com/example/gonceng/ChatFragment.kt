@@ -43,7 +43,7 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val rv = view.findViewById<RecyclerView>(R.id.rvChatList)
+        val rv = view.findViewById<RecyclerView>(R.id.chatFragment)
 
         val chatList = listOf(
             ChatItem("Abdul Driver", "Halo", "11.58 AM", R.drawable.profile),
