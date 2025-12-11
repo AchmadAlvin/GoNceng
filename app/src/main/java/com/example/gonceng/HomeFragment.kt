@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val button_mobil : ImageView = view.findViewById(R.id.gambar_mobil)
         button_mobil.setOnClickListener {
-            val intent = Intent(requireContext(), InputLokasi::class.java)
+            val intent = Intent(requireContext(), InputLokasiMobil::class.java)
             startActivity(intent)
         }
 

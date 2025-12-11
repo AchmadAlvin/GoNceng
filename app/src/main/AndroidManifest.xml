@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
+            android:name=".InputLokasiMobil"
+            android:exported="false" />
+        <activity
             android:name=".PesananBerhasilDibuat"
             android:exported="false" />
         <activity
@@ -46,9 +49,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatDetailActivity">
-            
-        </activity>
+        <activity android:name=".ChatDetailActivity" android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
