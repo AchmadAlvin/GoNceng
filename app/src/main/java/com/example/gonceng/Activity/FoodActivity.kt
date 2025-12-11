@@ -77,22 +77,4 @@ class FoodActivity : AppCompatActivity() {
             insets
         }
     }
-
-    // Fungsi ini digunakan untuk melakukan filtering data berdasarkan query yang dimasukkan ke EditText
-    // query merupakan teks yang dimasukkan ke EditText dengan tipe String
-    private fun filterData(query: String) {
-
-        // Jika query kosong, maka akan menampilkan semua data dari foodList
-        // Jika query tidak kosong, maka akan menampilkan data yang sesuai dengan query
-        val filteredList = if (query.isEmpty()) {
-            foodList
-        } else {
-            foodList.filter { food ->
-                food.name.contains(query, ignoreCase = true)
-            }
-        }
-
-        // Mengupdate data yang ditampilkan di RecyclerView dengan data yang telah difilter
-        adapter.updateData(filteredList)
-    }
 }
