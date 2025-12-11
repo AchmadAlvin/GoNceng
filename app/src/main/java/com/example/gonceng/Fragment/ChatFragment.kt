@@ -32,9 +32,9 @@ class ChatFragment : Fragment() {
 
         // Membuat dummy data chat
         val chatList = listOf(
-            ChatItem("Abdul Driver", "Halo mas, saya sudah sampai", "11.58 AM", R.drawable.profile),
-            ChatItem("Budi Santoso", "Oke siap, ditunggu ya", "Yesterday", R.drawable.profile),
-            ChatItem("Siti Aminah", "Terima kasih kembali", "Yesterday", R.drawable.profile)
+            ChatItem("Abdul Driver", "Oke siap", "11.58 AM", R.drawable.profile),
+            ChatItem("Budi Driver", "Oke siap", "Kemarin", R.drawable.profile),
+            ChatItem("Siti Driver", "Oke siap", "Kemarin", R.drawable.profile)
         )
 
         // Membuat adapter dan menangani klik item

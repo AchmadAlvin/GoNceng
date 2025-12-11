@@ -29,14 +29,14 @@ class HistoryFragment : Fragment() {
 
         // create dummy data history
         val historyList = listOf(
-            HistoryItem("6 KM", "Politeknik Negeri Madiun o Demangan, Taman", R.drawable.motor),
-            HistoryItem("7 KM", "Politeknik Negeri Madiun o Dagangan, dagangan", R.drawable.mobil),
-            HistoryItem("1 KM", "Politeknik Negeri Madiun o Universitas Merdeka", R.drawable.motor),
-            HistoryItem("8 KM", "Politeknik Negeri Madiun o Universitas PGRI", R.drawable.mobil),
+            HistoryItem("6 KM", "Kampus Universitas Terbuka Demangan, Taman", R.drawable.motor),
+            HistoryItem("7 KM", "Kampus 1 Politeknik Negeri Madiun, Jl Serayu", R.drawable.mobil),
+            HistoryItem("1 KM", "ayam Geprek Masbro, Jl. Pahlawan", R.drawable.motor),
+            HistoryItem("8 KM", "Universitas Merdeka Madiun, Jl Serayu", R.drawable.mobil),
             HistoryItem("8 KM", "Politeknik Negeri Madiun o Politeknik Negeri Madiun", R.drawable.motor),
-            HistoryItem("8 KM", "Politeknik Negeri Madiun o SMK 8 Madiun", R.drawable.mobil),
-            HistoryItem("12 KM", "Politeknik Negeri Madiun o Pasar Besar", R.drawable.motor),
-            HistoryItem("4 KM", "Politeknik Negeri Madiun o Alun-Alun Madiun", R.drawable.mobil)
+            HistoryItem("8 KM", "SMK 8 Madiun, Jl Ahmad Suwardi", R.drawable.mobil),
+            HistoryItem("12 KM", "Pasar Besar Madiun Kota, Jl Ringroad", R.drawable.motor),
+            HistoryItem("24 KM", "Alun Alun Ponorogo, Jl Cokrominoto", R.drawable.mobil)
         )
 
         // setup adapter history

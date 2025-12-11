@@ -164,7 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Mobil"
+                android:text="Motor"
                 android:textColor="@color/PrimaryColor"
                 android:fontFamily="@font/poppins_medium"/>
         </LinearLayout>
