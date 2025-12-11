@@ -10,7 +10,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.gonceng.Activity.MainActivity
 import com.example.gonceng.R
 import com.example.gonceng.activity_account_created
 
