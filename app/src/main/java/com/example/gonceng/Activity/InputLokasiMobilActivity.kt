@@ -2,7 +2,6 @@ package com.example.gonceng.Activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -12,22 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.gonceng.R
-import org.osmdroid.config.Configuration
-import org.osmdroid.util.GeoPoint
-import org.osmdroid.views.MapView
-import org.osmdroid.views.overlay.Marker
 
 class InputLokasiMobilActivity : AppCompatActivity() {
-//balajar lateinit
-//  kenapa pakai lateinit karena yang pertama mapview akan digunakan di semua lifecycle maka dari itu diluar on create dan apabila di innisialisai langsung disini itu tidak bisa krena layout xml nggak bisa di inisialisasi di luar life cycle
-    private lateinit var mapView: MapView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-//      inisialisasi context aplikas yakni ya halaman aplaikasi ini
-        val ctx = applicationContext
-        //      configurasi osm
-        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
         setContentView(R.layout.activity_input_lokasi_mobil)
 //      inisialisasi variable layout
         val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
@@ -36,36 +24,6 @@ class InputLokasiMobilActivity : AppCompatActivity() {
 
         val back_button : ImageView = findViewById<ImageView>(R.id.back_button)
 
-//      inisiaslisi mapview tadi yang masih belum ada isinya yang tadi masih lateinit
-        mapView = findViewById(R.id.maps_views)
-//      menghilangkan ikon zoom kayak - atau + default
-        mapView.setBuiltInZoomControls(false)
-//      agar bisa nge zoom
-        mapView.setMultiTouchControls(true)
-//      inisialisasi controller punya map osm
-        val mapController = mapView.controller
-//      digunakan untuk zoom berapa atu besarnya map atau ya gitulah
-        mapController.setZoom(13.2)
-//      digunakan untuk geopoint atau dimananya mapview focusnya  letak deo pakai long dan lat
-        val startPoint = GeoPoint(-7.8821, 111.5306)
-//      digunakan untuk menengahkan map focus di tengah
-        mapController.setCenter(startPoint)
-//      Marker adalah pin pada map itu
-//      inisialisasi marker map
-        val startMarker = Marker(mapView)
-//      di posisi mana marker berada di sintaks ini
-        startMarker.position = startPoint
-//      inni wajib tapi nggak tau untuk apa
-        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-//      ini mungkin kayak alt di web
-        startMarker.title = "Lokasi"
-//      inisialisasi icon yang dibuat marker
-        startMarker.icon = resources.getDrawable(R.drawable.lokasi)
-//      ini diguankan untuk menambahkan markernya itu di map
-        mapView.overlays.add(startMarker)
-//      refresh map
-        mapView.invalidate()
-//      digunakan untuk button pilih lompat ke halamn selanjutnya
         button_pilih.setOnClickListener {
 //      inisialisasi intent ke halaman detail pesanan
             val intent = Intent(this, DetailPesananMobilActivity::class.java)
@@ -94,15 +52,5 @@ class InputLokasiMobilActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
-//  mapview lifecycle onresume
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-// mapview lifecycle onpause
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
     }
 }
