@@ -15,9 +15,12 @@ class activity_account_created : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_account_created)
 
+        // Membuat variable untuk mencari view pada layout dengan tipe dan idnya.
         val okeButton : Button = findViewById<Button>(R.id.CreatedOke)
 
+        // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
         okeButton.setOnClickListener {
+            // Membuat variable intent yang memanggil konstruktor Intent
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }

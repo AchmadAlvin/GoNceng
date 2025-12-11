@@ -27,16 +27,20 @@ class FoodActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_food)
 
+        // Membuat variable untuk mencari view pada layout dengan tipe dan idnya
         val btnBack = findViewById<CardView>(R.id.btnBack)
         val rvFood = findViewById<RecyclerView>(R.id.rvFood)
         val etSearch = findViewById<EditText>(R.id.etSearch)
 
+        // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
         btnBack.setOnClickListener {
+
+            // digunakan untuk menutup activity yang sedang aktif
             finish()
         }
 
-        // Initialize Data
-        val foodList = listOf(
+        // membuat list dari objek FoodItem yang akan ditampilkan di RecyclerView
+        foodList = listOf(
             FoodItem("Mi Ayam Sleko", "Diantar dalam 10-20 min • 0.5 km", R.drawable.mi_ayam),
             FoodItem("Aneka Pecel Bu Yem", "Diantar dalam 15-25 min • 1.2 km", R.drawable.pecel),
             FoodItem("Sate Gule Siti", "Diantar dalam 20-30 min • 2.0 km", R.drawable.sate),
@@ -47,27 +51,47 @@ class FoodActivity : AppCompatActivity() {
             FoodItem("Kopi Pinggiran", "Diantar dalam 10-15 min • 0.8 km", R.drawable.kopi)
         )
 
-        // Initialize Adapter
+        // adapter untuk menghubungkan data ke RecyclerView, FoodAdapter adalah kelas adapter yang digunakan untuk menampilkan daftar makanan
         adapter = FoodAdapter(foodList) { food -> //food adalah objek yang diklik
+
+            // Membuat variable intent yang memanggil konstruktor Intent
             val intent = Intent(this, OrderDetailFood::class.java)
+
+            // menambahkan data ke intent yang akan dikirim ke OrderDetailFood
             intent.putExtra("foodName", food.name)
             intent.putExtra("foodImage", food.imageResId)
+
+            // memulai OrderDetailFood dengan membawa data intent yang telah diatur
             startActivity(intent)
 
         }
 
-        // Set RecyclerView
+        // mengatur layout manager dan adapter untuk RecyclerView, LinearLayoutManager digunakan untuk menampilkan item secara vertikal
         rvFood.layoutManager = LinearLayoutManager(this)
+        // mengatur adapter untuk RecyclerView, FoodAdapter yang telah diatur sebelumnya
         rvFood.adapter = adapter
 
-        // Search Listener
+        // addTextChangedListener digunakan untuk mengetahui perubahan teks di EditText
+        // menambahkan TextWatcher untuk menangani perubahan teks di EditText
         etSearch.addTextChangedListener(object : TextWatcher {
+
+            // sebuah fungsi yang dipanggil sebelum teks berubah
+            // s merupakan parameter dari teks yang akan diubah
+            // CharSequence? merupakan tipe data yang digunakan untuk merepresentasikan urutan karakter
+            // start merupakan indeks awal dari teks yang akan diubah
+            // count merupakan jumlah karakter yang akan diubah
+            // after merupakan jumlah karakter yang akan ditambahkan
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
+            // sebuah fungsi yang dipanggil ketika teks berubah
+            // before merupakan jumlah karakter yang akan dihapus
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Memanggil fungsi filterData dengan parameter yang sesuai
                 filterData(s.toString())
             }
 
+            // sebuah fungsi yang dipanggil setelah teks berubah
+            // Editable? merupakan tipe data yang digunakan untuk merepresentasikan urutan karakter yang dapat diubah
             override fun afterTextChanged(s: Editable?) {}
         })
 
@@ -78,7 +102,12 @@ class FoodActivity : AppCompatActivity() {
         }
     }
 
+    // Fungsi ini digunakan untuk melakukan filtering data berdasarkan query yang dimasukkan ke EditText
+    // query merupakan teks yang dimasukkan ke EditText dengan tipe String
     private fun filterData(query: String) {
+
+        // Jika query kosong, maka akan menampilkan semua data dari foodList
+        // Jika query tidak kosong, maka akan menampilkan data yang sesuai dengan query
         val filteredList = if (query.isEmpty()) {
             foodList
         } else {
@@ -86,6 +115,8 @@ class FoodActivity : AppCompatActivity() {
                 food.name.contains(query, ignoreCase = true)
             }
         }
+
+        // Mengupdate data yang ditampilkan di RecyclerView dengan data yang telah difilter
         adapter.updateData(filteredList)
     }
 }
