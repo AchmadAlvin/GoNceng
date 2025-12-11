@@ -1,4 +1,4 @@
-package com.example.gonceng
+package com.example.gonceng.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gonceng.Model.HistoryItem
+import com.example.gonceng.R
 
 class HistoryAdapter(
     private val list: List<HistoryItem>

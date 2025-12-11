@@ -1,4 +1,4 @@
-package com.example.gonceng
+package com.example.gonceng.Model
 
 data class HistoryItem(
     val distance: String,

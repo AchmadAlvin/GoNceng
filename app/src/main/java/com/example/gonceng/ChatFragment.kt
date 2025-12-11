@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gonceng.Adapter.ChatAdapter
+import com.example.gonceng.Model.ChatItem
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,8 +53,8 @@ class ChatFragment : Fragment() {
             ChatItem("Muhammad Driver", "Halo", "3.24 PM", R.drawable.profile)
         )
 
-        rv.adapter = ChatAdapter(chatList) {
-            item -> openChatDetail(item)
+        rv.adapter = ChatAdapter(chatList) { item ->
+            openChatDetail(item)
         }
         rv.layoutManager = LinearLayoutManager(requireContext())
     }

@@ -1,12 +1,13 @@
-package com.example.gonceng
+package com.example.gonceng.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageView
 import android.widget.TextView
-
+import androidx.recyclerview.widget.RecyclerView
+import com.example.gonceng.Model.ChatItem
+import com.example.gonceng.R
 
 class ChatAdapter(
     private val list: List<ChatItem>,
@@ -38,7 +39,5 @@ class ChatAdapter(
         }
     }
 
-
     override fun getItemCount(): Int = list.size
-
 }

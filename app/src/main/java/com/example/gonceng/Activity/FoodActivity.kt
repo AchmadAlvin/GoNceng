@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.gonceng.DetailGeprek
+import com.example.gonceng.DetailFood
 import com.example.gonceng.R
 
 class FoodActivity : AppCompatActivity() {
@@ -26,12 +26,12 @@ class FoodActivity : AppCompatActivity() {
         }
 
         btnGeprek.setOnClickListener {
-            val intent = Intent(this, DetailGeprek::class.java)
+            val intent = Intent(this, DetailFood::class.java)
             startActivity(intent)
         }
 
         btnMieAyam.setOnClickListener {
-            val intent = Intent(this, DetailGeprek::class.java)
+            val intent = Intent(this, DetailFood::class.java)
             startActivity(intent)
         }
 

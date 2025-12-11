@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class OrderDetailGeprekJuara : AppCompatActivity() {
+class OrderDetailFood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_order_detail_geprek_juara)
+        setContentView(R.layout.activity_order_detail_food)
 
         val btnOrder = findViewById<Button>(R.id.btnOrder)
 

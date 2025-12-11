@@ -9,11 +9,11 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class DetailGeprek : AppCompatActivity() {
+class DetailFood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_detail_geprek)
+        setContentView(R.layout.activity_detail_food)
 
         val btnBackFood = findViewById<CardView>(R.id.btnBackFood)
         val btnOrderGeprekJuara = findViewById<LinearLayout>(R.id.btnOrderGeprekJuara)
@@ -24,7 +24,7 @@ class DetailGeprek : AppCompatActivity() {
 
 
         btnOrderGeprekJuara.setOnClickListener {
-            val intent = Intent(this, OrderDetailGeprekJuara::class.java)
+            val intent = Intent(this, OrderDetailFood::class.java)
             startActivity(intent)
         }
 

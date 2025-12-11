@@ -24,10 +24,10 @@
             android:name=".InputLokasiMotor"
             android:exported="false" />
         <activity
-            android:name=".OrderDetailGeprekJuara"
+            android:name=".OrderDetailFood"
             android:exported="false" />
         <activity
-            android:name=".DetailGeprek"
+            android:name=".DetailFood"
             android:exported="false" />
         <activity
             android:name=".Activity.FoodActivity"
