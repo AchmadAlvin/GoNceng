@@ -48,6 +48,10 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), InputLokasi::class.java)
             startActivity(intent)
         }
+
+        view.findViewById<CardView>(R.id.cvProfile).setOnClickListener {
+            startActivity(Intent(requireContext(), ProfileActivity::class.java))
+        }
     }
 
     companion object {
