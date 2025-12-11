@@ -1,28 +1,25 @@
 package com.example.gonceng
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
-import android.preference.Preference
 import android.preference.PreferenceManager
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import org.osmdroid.config.Configuration
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
-import java.util.prefs.Preferences
 
-class InputLokasi : AppCompatActivity() {
-//balajar lateinit
+class InputLokasiMotor : AppCompatActivity() {
     private final lateinit var mapView: MapView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val ctx = applicationContext
-        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
-        setContentView(R.layout.activity_input_lokasi)
+        org.osmdroid.config.Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
+        setContentView(R.layout.activity_input_lokasi_motor)
 
         val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
 
@@ -31,10 +28,10 @@ class InputLokasi : AppCompatActivity() {
         mapView.setBuiltInZoomControls(false)
         mapView.setMultiTouchControls(true)
 
-        val mapController = mapView.controller
-        mapController.setZoom(13.2)
-        val startPoint = GeoPoint(-7.8821, 111.5306)
-        mapController.setCenter(startPoint)
+        val mapviewcontroller = mapView.controller
+        mapviewcontroller.setZoom(13.2)
+        val pointstat = GeoPoint(-7.8821, 111.5306)
+        mapviewcontroller.setCenter(pointstat)
 
         button_pilih.setOnClickListener {
             val intent = Intent(this, DetailPesananMobil::class.java)
@@ -42,12 +39,12 @@ class InputLokasi : AppCompatActivity() {
         }
 
 
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
     }
 
     override fun onResume() {

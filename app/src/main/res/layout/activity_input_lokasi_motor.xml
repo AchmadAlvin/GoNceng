@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputLokasi">
+    tools:context=".InputLokasiMotor">
 
     <org.osmdroid.views.MapView
         android:id="@+id/maps_views"
@@ -51,7 +51,7 @@
         android:textSize="14sp"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black"/>
-    
+
     <androidx.appcompat.widget.SearchView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -108,17 +108,17 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/f7_car_fill"/>
+                android:src="@drawable/ikonmotor"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Mobil"
+                android:text="Motor"
                 android:textColor="@color/PrimaryColor"
                 android:fontFamily="@font/poppins_medium"/>
         </LinearLayout>
-        
+
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
@@ -183,7 +183,7 @@
         android:padding="16sp"
         android:orientation="vertical"
         android:background="@drawable/rounded_shape_whiite">
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -246,16 +246,5 @@
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </LinearLayout>
-        
-        
-
-
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
