@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonceng.Adapter.ChatAdapter
-import com.example.gonceng.ChatDetailActivity
+import com.example.gonceng.Activity.ChatDetailActivity
 import com.example.gonceng.Model.ChatItem
 import com.example.gonceng.R
 

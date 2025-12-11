@@ -65,7 +65,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatDetailActivity" android:exported="false" />
+        <activity android:name=".Activity.ChatDetailActivity" android:exported="false" />
         <activity
             android:name=".Activity.ProfileActivity"
             android:exported="false" />
