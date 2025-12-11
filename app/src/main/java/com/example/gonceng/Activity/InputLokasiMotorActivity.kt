@@ -20,16 +20,9 @@ import org.osmdroid.views.overlay.Marker
 
 class InputLokasiMotorActivity : AppCompatActivity() {
 
-    //balajar lateinit
-//  kenapa pakai lateinit karena yang pertama mapview akan digunakan di semua lifecycle maka dari itu diluar on create dan apabila di innisialisai langsung disini itu tidak bisa krena layout xml nggak bisa di inisialisasi di luar life cycle
-    private lateinit var mapView: MapView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-//      inisialisasi context aplikas yakni ya halaman aplaikasi ini
-        val ctx = applicationContext
-//      configurasi osm
-        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
         setContentView(R.layout.activity_input_lokasi_motor)
 //      inisialisasi variable layout
         val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
@@ -37,37 +30,6 @@ class InputLokasiMotorActivity : AppCompatActivity() {
         val input_lokasi : EditText = findViewById<EditText>(R.id.input_lokasi_tujuan)
 
         val back_button : ImageView = findViewById<ImageView>(R.id.back_button)
-//      inisialisasi mapview tadi yang masih belum ada isinya yang tadi masih lateinit
-        mapView = findViewById(R.id.maps_views)
-//      menghilangkan ikon zoom kayak - atau + default
-        mapView.setBuiltInZoomControls(false)
-//      agar bisa nge zoom
-        mapView.setMultiTouchControls(true)
-//      inisialisasi controller punya map osm
-        val mapviewcontroller = mapView.controller
-//      digunakan untuk zoom berapa atu besarnaya kalau di web biasanay kita zoom 100% kalau ini pakai 13,2 atau scle zoomnya
-        mapviewcontroller.setZoom(13.2)
-//      digunakan untuk geopoint atau dimananya mapview focusnya  letak deo pakai long dan lat
-        val pointstat = GeoPoint(-7.8821, 111.5306)
-//      digunakan untuk menengahkan map focus di tengah  dengan geo tadi
-        mapviewcontroller.setCenter(pointstat)
-
-//      Marker adalah pin pada map itu
-//      inisialisasi marker map
-        val startMarker = Marker(mapView)
-//      possi untuk markernya
-        startMarker.position = pointstat
-//      nggak tau untuk apa
-        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-//      marker diberi kayak alt kalo di web paling
-        startMarker.title = "Lokasi"
-//      inisialisasi ikon ngambil di drawable
-        startMarker.icon = resources.getDrawable(R.drawable.lokasi)
-//      untuk menambah markenya
-        mapView.overlays.add(startMarker)
-//      refresh halaman mapviewnya
-        mapView.invalidate()
-//      button pilih untuk lompat ke halaman selanjutnya
         button_pilih.setOnClickListener {
 //      digunakan untuk inisialisasi variable intent meenuju ke detail pesanan
             val intent = Intent(this, DetailPesananMotorActivity::class.java)
@@ -97,14 +59,5 @@ class InputLokasiMotorActivity : AppCompatActivity() {
         }
 
     }
-//  inisilisasi mapview di lifecycle nresume
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-//  inisialisasi mapview di lifecycle onpause
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
-    }
+
 }
