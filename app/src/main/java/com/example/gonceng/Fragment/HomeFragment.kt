@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gonceng.Activity.FoodActivity
 import com.example.gonceng.Activity.ProfileActivity
 import com.example.gonceng.Adapter.FoodAdapter
-import com.example.gonceng.DetailFood
 import com.example.gonceng.InputLokasiMobil
 import com.example.gonceng.InputLokasiMotor
 import com.example.gonceng.Model.FoodItem
+import com.example.gonceng.OrderDetailFood
 import com.example.gonceng.R
 
 class HomeFragment : Fragment() {
@@ -70,24 +70,12 @@ class HomeFragment : Fragment() {
         )
 
         val adapter = FoodAdapter(foodList) { food ->
-            val intent = Intent(requireContext(), DetailFood::class.java)
+            val intent = Intent(requireContext(), OrderDetailFood::class.java)
+            intent.putExtra("foodName", food.name)
+            intent.putExtra("foodImage", food.imageResId)
             startActivity(intent)
         }
-
-        // Menggunakan GridLayoutManager karena tampilan di Home grid 2 kolom (atau vertical list biasa?)
-        // Layout sebelumnya adalah horizontal rows of 2 items.
-        // Jadi kita pakai GridLayoutManager span count 2.
-        // TAPI, item_food.xml desainnya horizontal (LIST).
-        // Layout lama di Home menggunakan CardView vertikal (gambar atas, teks bawah).
-        // Adapter saat ini (FoodAdapter) menggunakan item_food.xml (gambar kiri, teks kanan).
         
-        // JIKA user ingin TAMPILAN SAMA persis dengan sebelumnya, kita harus buat Item Layout baru atau memodifikasi FoodAdapter untuk support Grid.
-        // NAMUN, User berkata "menerapkan FoodAdapter pada setiap menunya". 
-        // FoodAdapter saat ini didesain untuk List.
-        // Saya akan gunakan LinearLayoutManager dulu agar sesuai dengan Adapter yang ada.
-        // Jika user ingin Grid, user akan komplain tampilannya beda.
-        
-        // Mari kita coba LinearLayoutManager dulu.
         rvFoodNearMe.layoutManager = LinearLayoutManager(requireContext())
         rvFoodNearMe.adapter = adapter
     }

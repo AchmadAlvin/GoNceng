@@ -13,8 +13,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonceng.Adapter.FoodAdapter
-import com.example.gonceng.DetailFood
 import com.example.gonceng.Model.FoodItem
+import com.example.gonceng.OrderDetailFood
 import com.example.gonceng.R
 
 class FoodActivity : AppCompatActivity() {
@@ -36,43 +36,24 @@ class FoodActivity : AppCompatActivity() {
         }
 
         // Initialize Data
-        foodList = listOf(
-            FoodItem(
-                name = "Ayam Geprek Masbro",
-                details = "Diantar dalam 15-25 min • 1.0 km",
-                imageResId = R.drawable.geprek
-            ),
-            FoodItem(
-                name = "Mie Ayam Pak Bas",
-                details = "Diantar dalam 15-25 min • 0.5 km",
-                imageResId = R.drawable.mi_ayam
-            ),
-             FoodItem(
-                name = "Sate Gule Siti",
-                details = "Diantar dalam 20-30 min • 2.0 km",
-                imageResId = R.drawable.sate
-            ),
-            FoodItem(
-                name = "Es Teh Kendil",
-                details = "Diantar dalam 5-10 min • 0.2 km",
-                imageResId = R.drawable.es_teh
-            ),
-             FoodItem(
-                name = "Mi Ayam Sleko",
-                details = "Diantar dalam 10-20 min • 0.5 km",
-                imageResId = R.drawable.mi_ayam
-            ),
-            FoodItem(
-                name = "Aneka Pecel Bu Yem",
-                details = "Diantar dalam 15-25 min • 1.2 km",
-                imageResId = R.drawable.pecel
-            )
+        val foodList = listOf(
+            FoodItem("Mi Ayam Sleko", "Diantar dalam 10-20 min • 0.5 km", R.drawable.mi_ayam),
+            FoodItem("Aneka Pecel Bu Yem", "Diantar dalam 15-25 min • 1.2 km", R.drawable.pecel),
+            FoodItem("Sate Gule Siti", "Diantar dalam 20-30 min • 2.0 km", R.drawable.sate),
+            FoodItem("Es Teh Kendil", "Diantar dalam 5-10 min • 0.2 km", R.drawable.es_teh),
+            FoodItem("Mi Ayam Pak Bas", "Diantar dalam 15-25 min • 1.5 km", R.drawable.mi_ayam2),
+            FoodItem("Geprek Masbro", "Diantar dalam 15-25 min • 1.0 km", R.drawable.geprek),
+            FoodItem("Roti Bakar Suherman", "Diantar dalam 20-40 min • 3.0 km", R.drawable.rotibakar),
+            FoodItem("Kopi Pinggiran", "Diantar dalam 10-15 min • 0.8 km", R.drawable.kopi)
         )
 
         // Initialize Adapter
-        adapter = FoodAdapter(foodList) { food ->
-            val intent = Intent(this, DetailFood::class.java)
+        adapter = FoodAdapter(foodList) { food -> //food adalah objek yang diklik
+            val intent = Intent(this, OrderDetailFood::class.java)
+            intent.putExtra("foodName", food.name)
+            intent.putExtra("foodImage", food.imageResId)
             startActivity(intent)
+
         }
 
         // Set RecyclerView

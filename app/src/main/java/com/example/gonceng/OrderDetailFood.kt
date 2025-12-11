@@ -15,6 +15,17 @@ class OrderDetailFood : AppCompatActivity() {
         setContentView(R.layout.activity_order_detail_food)
 
         val btnOrder = findViewById<Button>(R.id.btnOrder)
+        val btnBack = findViewById<android.view.View>(R.id.btnBackDetail)
+
+        val foodName = intent.getStringExtra("foodName")
+        val foodImage = intent.getIntExtra("foodImage", 0)
+
+        findViewById<android.widget.TextView>(R.id.tvFoodNameDetail).text = foodName
+        findViewById<android.widget.ImageView>(R.id.imgFoodDetail).setImageResource(foodImage)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         btnOrder.setOnClickListener {
             val intent = Intent(this, PesananBerhasilDibuat::class.java)

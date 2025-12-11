@@ -29,9 +29,7 @@
         <activity
             android:name=".OrderDetailFood"
             android:exported="false" />
-        <activity
-            android:name=".DetailFood"
-            android:exported="false" />
+
         <activity
             android:name=".Activity.FoodActivity"
             android:exported="false" />
@@ -40,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".DetailPesananMobil"
-            android:exported="false" />
-        <activity
-            android:name=".InputLokasiMobil"
             android:exported="false" />
         <activity
             android:name=".Activity.HomeActivity"
