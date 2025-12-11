@@ -2,34 +2,35 @@ package com.example.gonceng
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class DetailGeprek : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_detail_geprek)
 
-        val btnlogin = findViewById<Button>(R.id.btnLogin)
-        val buttonregister = findViewById<Button>(R.id.btnRegister)
+        val btnBackFood = findViewById<CardView>(R.id.btnBackFood)
+        val btnOrderGeprekJuara = findViewById<LinearLayout>(R.id.btnOrderGeprekJuara)
 
-        btnlogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+        btnBackFood.setOnClickListener {
+            finish()
         }
 
-        buttonregister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+
+        btnOrderGeprekJuara.setOnClickListener {
+            val intent = Intent(this, OrderDetailGeprekJuara::class.java)
             startActivity(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }

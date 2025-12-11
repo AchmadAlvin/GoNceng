@@ -3,47 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F5F5F5"
     tools:context=".ChatFragment">
 
 <!-- plis kenek-->
     <LinearLayout
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#263933"
-            android:padding="32sp">
-            
-            <TextView
-                android:id="@+id/tvTitleChat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chat"
-                android:textColor="#FFFFFF"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:fontFamily="@font/poppins_regular">
-            </TextView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvChatList"
-            android:layout_width="match_parent"
-            android:layout_height="0sp"
-            android:layout_weight="1"
-            android:padding="16sp"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_chat">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>

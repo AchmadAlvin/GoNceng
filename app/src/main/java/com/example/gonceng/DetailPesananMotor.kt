@@ -7,20 +7,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.gonceng.Activity.HomeActivity
 
-class PesananBerhasilDibuat : AppCompatActivity() {
+class DetailPesananMotor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_pesanan_berhasil_dibuat)
-        val button_oke : Button = findViewById<Button>(R.id.button_oke)
+        setContentView(R.layout.activity_detail_pesanan_motor)
 
-        button_oke.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        val buttob_pesan : Button = findViewById<Button>(R.id.button_pesan)
+
+        buttob_pesan.setOnClickListener {
+            val intent = Intent(this, PesananBerhasilDibuat::class.java)
             startActivity(intent)
         }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

@@ -17,28 +17,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
+            android:name=".InputLokasiMobil"
+            android:name=".DetailPesananMotor"
+            android:exported="false" />
+        <activity
+            android:name=".InputLokasiMotor"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailGeprekJuara"
+            android:exported="false" />
+        <activity
+            android:name=".DetailGeprek"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.FoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".PesananBerhasilDibuat"
             android:exported="false" />
         <activity
             android:name=".DetailPesananMobil"
             android:exported="false" />
         <activity
-            android:name=".InputLokasi"
+            android:name=".InputLokasiMobil"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".activity_account_created"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,9 +62,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatDetailActivity">
-            
-        </activity>
+        <activity android:name=".ChatDetailActivity" android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
