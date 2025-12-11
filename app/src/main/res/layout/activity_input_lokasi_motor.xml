@@ -64,7 +64,7 @@
         app:searchHintIcon="@null"
         app:queryHint="search"
         android:focusable="false"
-        app:searchIcon="@drawable/iconamoon_search"
+        app:searchIcon="@drawable/search_hitam"
         android:background="@drawable/search_bg"
         app:queryBackground="@null"
         android:queryBackground="@null"
@@ -112,7 +112,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/motor"/>
+                android:src="@drawable/ikonmotor"/>
 
             <TextView
                 android:layout_width="wrap_content"

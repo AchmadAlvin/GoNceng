@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
 
 class InputLokasiMotor : AppCompatActivity() {
     private final lateinit var mapView: MapView
@@ -33,6 +34,13 @@ class InputLokasiMotor : AppCompatActivity() {
         val pointstat = GeoPoint(-7.8821, 111.5306)
         mapviewcontroller.setCenter(pointstat)
 
+        val startMarker = Marker(mapView)
+        startMarker.position = pointstat
+        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+        startMarker.title = "Lokasi"
+        startMarker.icon = resources.getDrawable(R.drawable.lokasi)
+        mapView.overlays.add(startMarker)
+        mapView.invalidate()
         button_pilih.setOnClickListener {
             val intent = Intent(this, DetailPesananMobil::class.java)
             startActivity(intent)
