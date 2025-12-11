@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // Membuat variable untuk mencari view pada layout dengan tipe dan idnya
+        // variable untuk mencari view pada layout dengan tipe dan idnya
         val btnlogin = findViewById<Button>(R.id.btnLogin)
         val buttonregister = findViewById<Button>(R.id.btnRegister)
 
-        // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
+        // object yang telah dibuat dan menggunakan fungsi setOnclickListener
         btnlogin.setOnClickListener {
             // Membuat variable intent yang memanggil konstruktor Intent
             val intent = Intent(this, LoginActivity::class.java)

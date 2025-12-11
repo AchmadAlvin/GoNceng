@@ -33,7 +33,7 @@ class FoodActivity : AppCompatActivity() {
         val btnBack = findViewById<CardView>(R.id.btnBack)
         val rvFood = findViewById<RecyclerView>(R.id.rvFood)
 
-        // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
+        // object yang telah dibuat dan menggunakan fungsi setOnclickListener
         btnBack.setOnClickListener {
 
             // digunakan untuk menutup activity yang sedang aktif

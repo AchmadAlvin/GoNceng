@@ -29,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
         val registerButton : Button = findViewById<Button>(R.id.btnCreateAccount)
 
 
-        // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
+        // object yang telah dibuat dan menggunakan fungsi setOnclickListener
         backButton.setOnClickListener {
 
             // Membuat variable intent yang memanggil konstruktor Intent
@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // object dari variable yang telah dibuat dan menggunakan fungsi setOnclickListener
+        // object yang telah dibuat dan menggunakan fungsi setOnclickListener
         registerButton.setOnClickListener {
 
             // membuat variabel untuk mengubah input menjadi string

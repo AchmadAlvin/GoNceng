@@ -2,7 +2,6 @@ package com.example.gonceng.Activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -11,12 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.gonceng.Fragment.HomeFragment
 import com.example.gonceng.R
-import org.osmdroid.config.Configuration
-import org.osmdroid.util.GeoPoint
-import org.osmdroid.views.MapView
-import org.osmdroid.views.overlay.Marker
 
 class InputLokasiMotorActivity : AppCompatActivity() {
 
