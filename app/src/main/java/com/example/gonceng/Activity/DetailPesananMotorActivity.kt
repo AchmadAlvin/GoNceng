@@ -36,8 +36,7 @@ class DetailPesananMotorActivity : AppCompatActivity() {
         }
 //      button back untuk kembali ke halaman sebelumnya dengan  intent
         back_button.setOnClickListener {
-            val intent = Intent(this, HomeFragment::class.java)
-            startActivity(intent)
+            finish()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

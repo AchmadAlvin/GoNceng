@@ -86,8 +86,7 @@ class InputLokasiMotorActivity : AppCompatActivity() {
         }
 //      back button untuk mengembalikan ke halaman sebelumnay atau lompat ke halaman sebelumnya
         back_button.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
 

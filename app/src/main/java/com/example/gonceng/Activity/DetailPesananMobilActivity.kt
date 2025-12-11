@@ -34,8 +34,7 @@ class DetailPesananMobilActivity : AppCompatActivity() {
         }
 //      button back udah paham
         back_button.setOnClickListener {
-            val intent = Intent(this, InputLokasiMobilActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
 
