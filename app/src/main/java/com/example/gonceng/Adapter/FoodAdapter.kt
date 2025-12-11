@@ -10,7 +10,8 @@ import com.example.gonceng.Model.FoodItem
 import com.example.gonceng.R
 
 class FoodAdapter(
-    private val foodList: List<FoodItem>,
+    // Ubah menjadi var agar bisa diupdate, atau buat private mutable list
+    private var foodList: List<FoodItem>,
     private val onItemClick: (FoodItem) -> Unit
 ) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
@@ -37,4 +38,10 @@ class FoodAdapter(
     }
 
     override fun getItemCount(): Int = foodList.size
+
+    // Method baru untuk update data
+    fun updateData(newFoodList: List<FoodItem>) {
+        foodList = newFoodList
+        notifyDataSetChanged()
+    }
 }
