@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inisialisasi objek-objek UI dari layout menggunakan findViewById
+        // Inisialisasi objek-objek dari layout menggunakan findViewById
         val btnFood = view.findViewById<CardView>(R.id.btnFood)
         val btnProfile = view.findViewById<CardView>(R.id.cvProfile)
         val button_mobil = view.findViewById<ImageView>(R.id.gambar_mobil)
@@ -71,8 +71,9 @@ class HomeFragment : Fragment() {
             FoodItem("Kopi Pinggiran", "Diantar dalam 10-15 min • 0.8 km", R.drawable.kopi)
         )
 
-        // Membuat adapter untuk RecyclerView dan menghubungkannya dengan data
-        val adapter = FoodAdapter(foodList) { food -> // FoodItem yang diklik
+        // variable yang menggunakan FoodAdapter dengan object foodList yang telah dibuat sebelumnya
+        // lambda yang akan dipanggil ketika item makanan diklik (object list yang telah dibuat sebelumnya)
+        val adapter = FoodAdapter(foodList) { food ->
 
             // Membuat intent untuk membuka OrderDetailFood dan mengirimkan data makanan yang dipilih
             val intent = Intent(requireContext(), OrderDetailFood::class.java)
@@ -80,11 +81,15 @@ class HomeFragment : Fragment() {
             // Mengirim data makanan yang dipilih ke OrderDetailFood
             intent.putExtra("foodName", food.name)
             intent.putExtra("foodImage", food.imageResId)
+
+            // Memulai OrderDetailFood dengan intent yang telah diatur
             startActivity(intent)
         }
 
-        // Mengatur layout manager dan adapter untuk RecyclerView
+        // object rvFoodNearMe menggunakan layout manager dengan menyusun item secara vertikal.
         rvFoodNearMe.layoutManager = LinearLayoutManager(requireContext())
+
+        // object rvFoodNearMe menggunakan adapter yang telah dibuat sebelumnya
         rvFoodNearMe.adapter = adapter
     }
 }

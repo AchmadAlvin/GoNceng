@@ -22,14 +22,14 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
 
-        // Membuat variabel yang berisi hasil pencarian fragment wadah pada layout berdasarkan ID menjadi NavHostFragment
+        // variabel yang digunakan untuk menemukan fragment menggunakan ID layout menjadi NavHostFragment
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_activity_home) as NavHostFragment
 
-        // Membuat variabel yang menggunakan objek pengontrol navigasi menggunakan navHostFragment untuk mengatur navigasi antar fragment
+        // variabel yang digunakan untuk mengambil navHostFragment dan mengelola navigasi antar fragment dan menyimpannya di navController
         val navController = navHostFragment.navController
 
-        // Membuat variabel yang berisi objek BottomNavigationView dari layout
+        // Membuat variable untuk mencari view pada layout dengan tipe dan idnya
         val navView = findViewById<BottomNavigationView>(R.id.nav_view)
 
         // menggunakan fungsi setupWithNavController untuk mengatur navigasi antar fragment
