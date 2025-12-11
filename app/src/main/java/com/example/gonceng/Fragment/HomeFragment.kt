@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import com.example.gonceng.Activity.FoodActivity
+import com.example.gonceng.Activity.ProfileActivity
 import com.example.gonceng.InputLokasiMobil
 import com.example.gonceng.InputLokasiMotor
 import com.example.gonceng.R
@@ -28,6 +29,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnFood : CardView = view.findViewById(R.id.btnFood)
+        val btnProfile : CardView = view.findViewById(R.id.cvProfile)
 
         //hmm.. pake image apa card?
         val button_mobil : ImageView = view.findViewById(R.id.gambar_mobil)
@@ -36,6 +38,11 @@ class HomeFragment : Fragment() {
 
         button_mobil.setOnClickListener {
             val intent = Intent(requireContext(), InputLokasiMobil::class.java)
+            startActivity(intent)
+        }
+
+        btnProfile.setOnClickListener {
+            val intent = Intent(requireContext(), ProfileActivity::class.java)
             startActivity(intent)
         }
 
