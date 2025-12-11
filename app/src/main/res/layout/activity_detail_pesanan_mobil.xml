@@ -130,7 +130,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_mobil_jarak_waktu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -145,7 +145,10 @@
         android:layout_marginBottom="21dp">
 
         <LinearLayout
-
+            android:id="@+id/box_mobil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="12dp"
@@ -166,12 +169,13 @@
                 android:fontFamily="@font/poppins_medium"/>
         </LinearLayout>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"/>
-
         <LinearLayout
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/box_mobil"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="1.0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_shape_jarak"
@@ -184,6 +188,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Jarak:"
+                android:textSize="11sp"
                 android:textColor="@color/white"/>
 
             <TextView
@@ -193,15 +198,18 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="0,7 KM"
+                android:textSize="11sp"
                 android:textColor="@color/white"/>
 
             <TextView
+
                 android:id="@+id/text_Waktu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="26dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Waktu:"
+                android:textSize="11sp"
                 android:textColor="@color/white"/>
 
             <TextView
@@ -211,9 +219,10 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="7 Menit"
+                android:textSize="11sp"
                 android:textColor="@color/white"/>
         </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/teks_ringkasan_pembayaran"
