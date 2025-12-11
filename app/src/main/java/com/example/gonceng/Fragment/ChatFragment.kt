@@ -15,32 +15,38 @@ import com.example.gonceng.R
 
 class ChatFragment : Fragment() {
 
+    // inisialisasi layout fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chat, container, false)
     }
 
+    // atur logika tampilan setelah view dibuat
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Inisialisasi RecyclerView
         val rvChat = view.findViewById<RecyclerView>(R.id.rvChatList)
 
+        // Membuat dummy data chat
         val chatList = listOf(
             ChatItem("Abdul Driver", "Halo mas, saya sudah sampai", "11.58 AM", R.drawable.profile),
             ChatItem("Budi Santoso", "Oke siap, ditunggu ya", "Yesterday", R.drawable.profile),
             ChatItem("Siti Aminah", "Terima kasih kembali", "Yesterday", R.drawable.profile)
         )
 
+        // Membuat adapter dan menangani klik item
         val adapter = ChatAdapter(chatList) { chat ->
+            // Navigasi ke ChatDetailActivity dengan membawa data driver
             val intent = Intent(requireContext(), ChatDetailActivity::class.java)
             intent.putExtra("driverName", chat.name)
             intent.putExtra("driverImage", chat.profileRes)
             startActivity(intent)
         }
 
+        // atur layout manager dan adapter ke RecyclerView
         rvChat.layoutManager = LinearLayoutManager(requireContext())
         rvChat.adapter = adapter
     }

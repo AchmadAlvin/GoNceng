@@ -12,19 +12,22 @@ import com.example.gonceng.Model.HistoryItem
 import com.example.gonceng.R
 
 class HistoryFragment : Fragment() {
+    // inisialisasi layout fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_history, container, false)
     }
 
+    // atur logika tampilan
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // inisialisasi recyclerview
         val rvHistory = view.findViewById<RecyclerView>(R.id.rvHistoryList)
 
+        // create dummy data history
         val historyList = listOf(
             HistoryItem("6 KM", "Politeknik Negeri Madiun o Demangan, Taman", R.drawable.motor),
             HistoryItem("7 KM", "Politeknik Negeri Madiun o Dagangan, dagangan", R.drawable.mobil),
@@ -36,7 +39,9 @@ class HistoryFragment : Fragment() {
             HistoryItem("4 KM", "Politeknik Negeri Madiun o Alun-Alun Madiun", R.drawable.mobil)
         )
 
+        // setup adapter history
         val adapter = HistoryAdapter(historyList)
+        // set layout manager dan adapter
         rvHistory.layoutManager = LinearLayoutManager(requireContext())
         rvHistory.adapter = adapter
     }
