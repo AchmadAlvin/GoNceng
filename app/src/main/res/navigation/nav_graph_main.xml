@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.gonceng.HomeFragment"
+        android:name="com.example.gonceng.Fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.gonceng.ChatFragment"
+        android:name="com.example.gonceng.Fragment.ChatFragment"
         android:label="Chat"
         tools:layout="@layout/fragment_chat" />
 
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.example.gonceng.HistoryFragment"
+        android:name="com.example.gonceng.Fragment.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history" />
 </navigation>

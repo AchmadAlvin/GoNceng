@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    tools:context=".HomeFragment">
+    tools:context=".Fragment.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,6 +88,7 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <ImageView
+                        android:id="@+id/gambar_motor"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/motor" />
@@ -131,6 +132,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/btnFood"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
