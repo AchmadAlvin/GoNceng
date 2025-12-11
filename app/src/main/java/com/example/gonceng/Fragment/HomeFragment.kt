@@ -31,12 +31,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnFood : CardView = view.findViewById(R.id.btnFood)
-        val btnProfile : CardView = view.findViewById(R.id.cvProfile)
-        val button_mobil : ImageView = view.findViewById(R.id.gambar_mobil)
-        val button_motor : ImageView = view.findViewById(R.id.gambar_motor)
-        val rvFoodNearMe : RecyclerView = view.findViewById(R.id.rvFoodNearMe)
+        // Inisialisasi objek-objek UI dari layout menggunakan findViewById
+        val btnFood = view.findViewById<CardView>(R.id.btnFood)
+        val btnProfile = view.findViewById<CardView>(R.id.cvProfile)
+        val button_mobil = view.findViewById<ImageView>(R.id.gambar_mobil)
+        val button_motor = view.findViewById<ImageView>(R.id.gambar_motor)
+        val rvFoodNearMe = view.findViewById<RecyclerView>(R.id.rvFoodNearMe)
 
+        // membuat event listener untuk setiap object yang telah dibuat
         button_mobil.setOnClickListener {
             val intent = Intent(requireContext(), InputLokasiMobilActivity::class.java)
             startActivity(intent)
@@ -57,7 +59,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        // Data Dummy untuk HomeFragment
+        // Membuat daftar objek FoodItem yang akan ditampilkan di RecyclerView
         val foodList = listOf(
             FoodItem("Mi Ayam Sleko", "Diantar dalam 10-20 min • 0.5 km", R.drawable.mi_ayam),
             FoodItem("Aneka Pecel Bu Yem", "Diantar dalam 15-25 min • 1.2 km", R.drawable.pecel),
@@ -69,13 +71,19 @@ class HomeFragment : Fragment() {
             FoodItem("Kopi Pinggiran", "Diantar dalam 10-15 min • 0.8 km", R.drawable.kopi)
         )
 
-        val adapter = FoodAdapter(foodList) { food ->
+        // Membuat adapter untuk RecyclerView dan menghubungkannya dengan data
+        val adapter = FoodAdapter(foodList) { food -> // FoodItem yang diklik
+
+            // Membuat intent untuk membuka OrderDetailFood dan mengirimkan data makanan yang dipilih
             val intent = Intent(requireContext(), OrderDetailFood::class.java)
+
+            // Mengirim data makanan yang dipilih ke OrderDetailFood
             intent.putExtra("foodName", food.name)
             intent.putExtra("foodImage", food.imageResId)
             startActivity(intent)
         }
-        
+
+        // Mengatur layout manager dan adapter untuk RecyclerView
         rvFoodNearMe.layoutManager = LinearLayoutManager(requireContext())
         rvFoodNearMe.adapter = adapter
     }

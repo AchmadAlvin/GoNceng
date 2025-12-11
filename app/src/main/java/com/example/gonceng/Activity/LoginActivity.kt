@@ -19,10 +19,10 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 //      Inisiasi variable pada layout
-        val backButton : ImageView = findViewById<ImageView>(R.id.back_button)
-        val formEmail : EditText = findViewById<EditText>(R.id.form_email)
-        val formPassword : EditText = findViewById<EditText>(R.id.form_password)
-        val buttonLogin : Button = findViewById<Button>(R.id.button_login)
+        val backButton = findViewById<ImageView>(R.id.back_button)
+        val formEmail = findViewById<EditText>(R.id.form_email)
+        val formPassword = findViewById<EditText>(R.id.form_password)
+        val buttonLogin = findViewById<Button>(R.id.button_login)
 //      membuat lompatan back button untuk kembali ke onboarding
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
