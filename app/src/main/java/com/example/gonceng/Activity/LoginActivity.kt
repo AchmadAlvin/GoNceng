@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 //          inisiasi intent
             val intent = Intent(this, HomeActivity::class.java)
 //          data dari email data static
-            var emailData : String = "Achmad Alvin"
+            var emailData : String = "Achmad@email.com"
 //          data dari password data static
             var passwordData : String = "12345678"
 //          inisiasi agar input edit text email menjadi string
