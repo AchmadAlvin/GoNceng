@@ -5,10 +5,14 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.gonceng.Fragment.HomeFragment
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
@@ -23,6 +27,10 @@ class InputLokasiMotor : AppCompatActivity() {
         setContentView(R.layout.activity_input_lokasi_motor)
 
         val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
+
+        val input_lokasi : EditText = findViewById<EditText>(R.id.input_lokasi_tujuan)
+
+        val back_button : ImageView = findViewById<ImageView>(R.id.back_button)
 
         mapView = findViewById(R.id.maps_views)
 
@@ -42,7 +50,20 @@ class InputLokasiMotor : AppCompatActivity() {
         mapView.overlays.add(startMarker)
         mapView.invalidate()
         button_pilih.setOnClickListener {
-            val intent = Intent(this, DetailPesananMobil::class.java)
+            val intent = Intent(this, DetailPesananMotor::class.java)
+            val inputLokasiConvert = input_lokasi.text.toString()
+
+            if (inputLokasiConvert.isNotEmpty()){
+                intent.putExtra("data_lokasi_tujuan", inputLokasiConvert)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Masukkan Alamat Tujuan", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+        back_button.setOnClickListener {
+            val intent = Intent(this, HomeFragment::class.java)
             startActivity(intent)
         }
 
