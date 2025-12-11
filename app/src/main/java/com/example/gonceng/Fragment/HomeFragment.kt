@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonceng.Activity.FoodActivity
+import com.example.gonceng.Activity.InputLokasiMobilActivity
 import com.example.gonceng.Activity.ProfileActivity
 import com.example.gonceng.Adapter.FoodAdapter
 import com.example.gonceng.Activity.InputLokasiMotorActivity
@@ -37,7 +38,7 @@ class HomeFragment : Fragment() {
         val rvFoodNearMe : RecyclerView = view.findViewById(R.id.rvFoodNearMe)
 
         button_mobil.setOnClickListener {
-            val intent = Intent(requireContext(), `InputLokasiMobil.Activity`::class.java)
+            val intent = Intent(requireContext(), InputLokasiMobilActivity::class.java)
             startActivity(intent)
         }
 
