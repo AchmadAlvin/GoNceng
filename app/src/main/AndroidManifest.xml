@@ -17,14 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoNceng">
         <activity
-            android:name=".InputLokasiMobil"
+            android:name=".`InputLokasiMobil.Activity`"
             android:exported="false"
             />
         <activity
-            android:name=".DetailPesananMotor"
+            android:name=".Activity.DetailPesananMotorActivity"
             android:exported="false" />
         <activity
-            android:name=".InputLokasiMotor"
+            android:name=".Activity.InputLokasiMotorActivity"
             android:exported="false" />
         <activity
             android:name=".OrderDetailFood"
@@ -37,7 +37,7 @@
             android:name=".PesananBerhasilDibuat"
             android:exported="false" />
         <activity
-            android:name=".DetailPesananMobil"
+            android:name=".Activity.DetailPesananMobilActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.HomeActivity"

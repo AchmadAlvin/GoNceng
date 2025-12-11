@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gonceng.Activity.FoodActivity
 import com.example.gonceng.Activity.ProfileActivity
 import com.example.gonceng.Adapter.FoodAdapter
-import com.example.gonceng.InputLokasiMobil
-import com.example.gonceng.InputLokasiMotor
+import com.example.gonceng.Activity.InputLokasiMotorActivity
 import com.example.gonceng.Model.FoodItem
 import com.example.gonceng.OrderDetailFood
 import com.example.gonceng.R
@@ -38,7 +37,7 @@ class HomeFragment : Fragment() {
         val rvFoodNearMe : RecyclerView = view.findViewById(R.id.rvFoodNearMe)
 
         button_mobil.setOnClickListener {
-            val intent = Intent(requireContext(), InputLokasiMobil::class.java)
+            val intent = Intent(requireContext(), `InputLokasiMobil.Activity`::class.java)
             startActivity(intent)
         }
 
@@ -48,7 +47,7 @@ class HomeFragment : Fragment() {
         }
 
         button_motor.setOnClickListener {
-            val intent = Intent(requireContext(), InputLokasiMotor::class.java)
+            val intent = Intent(requireContext(), InputLokasiMotorActivity::class.java)
             startActivity(intent)
         }
 

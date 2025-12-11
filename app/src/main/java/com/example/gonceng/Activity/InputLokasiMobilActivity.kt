@@ -1,4 +1,4 @@
-package com.example.gonceng
+package com.example.gonceng.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,14 +11,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.gonceng.Activity.HomeActivity
-import com.example.gonceng.Fragment.HomeFragment
+import com.example.gonceng.R
 import org.osmdroid.config.Configuration
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 
-class InputLokasiMobil : AppCompatActivity() {
+class InputLokasiMobilActivity : AppCompatActivity() {
 //balajar lateinit
 //  kenapa pakai lateinit karena yang pertama mapview akan digunakan di semua lifecycle maka dari itu diluar on create dan apabila di innisialisai langsung disini itu tidak bisa krena layout xml nggak bisa di inisialisasi di luar life cycle
     private lateinit var mapView: MapView
@@ -69,7 +68,7 @@ class InputLokasiMobil : AppCompatActivity() {
 //      digunakan untuk button pilih lompat ke halamn selanjutnya
         button_pilih.setOnClickListener {
 //      inisialisasi intent ke halaman detail pesanan
-            val intent = Intent(this, DetailPesananMobil::class.java)
+            val intent = Intent(this, DetailPesananMobilActivity::class.java)
 //      digunakan nutk convert input lokasi dari tipedata edit text ke string
             val inputLokasiConvert = inputLokasi.text.toString()
 //      logika jika lokasi tujuan terisi maka lompat ke halaman selanjutnya

@@ -14,10 +14,12 @@ class PesananBerhasilDibuat : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pesanan_berhasil_dibuat)
+//      inisialisasi variable layout
         val button_oke : Button = findViewById<Button>(R.id.button_oke)
-
+//      digunakan untuk melompat ke halaman homepage
         button_oke.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
+//          seharusnya mergahapus semua tumpukan halaman activity tetapi nggak bisa
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }

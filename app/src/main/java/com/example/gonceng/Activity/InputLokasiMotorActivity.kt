@@ -1,7 +1,6 @@
-package com.example.gonceng
+package com.example.gonceng.Activity
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.widget.Button
@@ -13,11 +12,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.gonceng.Fragment.HomeFragment
+import com.example.gonceng.R
+import org.osmdroid.config.Configuration
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 
-class InputLokasiMotor : AppCompatActivity() {
+class InputLokasiMotorActivity : AppCompatActivity() {
 
     //balajar lateinit
 //  kenapa pakai lateinit karena yang pertama mapview akan digunakan di semua lifecycle maka dari itu diluar on create dan apabila di innisialisai langsung disini itu tidak bisa krena layout xml nggak bisa di inisialisasi di luar life cycle
@@ -28,7 +29,7 @@ class InputLokasiMotor : AppCompatActivity() {
 //      inisialisasi context aplikas yakni ya halaman aplaikasi ini
         val ctx = applicationContext
 //      configurasi osm
-        org.osmdroid.config.Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
+        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx))
         setContentView(R.layout.activity_input_lokasi_motor)
 //      inisialisasi variable layout
         val button_pilih : Button = findViewById<Button>(R.id.button_pilih)
@@ -69,7 +70,7 @@ class InputLokasiMotor : AppCompatActivity() {
 //      button pilih untuk lompat ke halaman selanjutnya
         button_pilih.setOnClickListener {
 //      digunakan untuk inisialisasi variable intent meenuju ke detail pesanan
-            val intent = Intent(this, DetailPesananMotor::class.java)
+            val intent = Intent(this, DetailPesananMotorActivity::class.java)
 //      mengubah tipe data edit text menjadi string
             val inputLokasiConvert = input_lokasi.text.toString()
 //      jika user mengisi edittextnya maka ya isinya akn dijelasin di bawah
