@@ -37,7 +37,7 @@ class InputLokasiMotorActivity : AppCompatActivity() {
         val input_lokasi : EditText = findViewById<EditText>(R.id.input_lokasi_tujuan)
 
         val back_button : ImageView = findViewById<ImageView>(R.id.back_button)
-//      inisiaslisi mapview tadi yang masih belum ada isinya yang tadi masih lateinit
+//      inisialisasi mapview tadi yang masih belum ada isinya yang tadi masih lateinit
         mapView = findViewById(R.id.maps_views)
 //      menghilangkan ikon zoom kayak - atau + default
         mapView.setBuiltInZoomControls(false)
@@ -45,7 +45,7 @@ class InputLokasiMotorActivity : AppCompatActivity() {
         mapView.setMultiTouchControls(true)
 //      inisialisasi controller punya map osm
         val mapviewcontroller = mapView.controller
-//      digunakan untuk zoom berapa atu besarnya map atau ya gitulah
+//      digunakan untuk zoom berapa atu besarnaya kalau di web biasanay kita zoom 100% kalau ini pakai 13,2 atau scle zoomnya
         mapviewcontroller.setZoom(13.2)
 //      digunakan untuk geopoint atau dimananya mapview focusnya  letak deo pakai long dan lat
         val pointstat = GeoPoint(-7.8821, 111.5306)
@@ -59,7 +59,7 @@ class InputLokasiMotorActivity : AppCompatActivity() {
         startMarker.position = pointstat
 //      nggak tau untuk apa
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-//      kayak alt kalo di web paling
+//      marker diberi kayak alt kalo di web paling
         startMarker.title = "Lokasi"
 //      inisialisasi ikon ngambil di drawable
         startMarker.icon = resources.getDrawable(R.drawable.lokasi)
@@ -84,9 +84,9 @@ class InputLokasiMotorActivity : AppCompatActivity() {
             }
 
         }
-//      back buttn udah tahu ngak usah dijelasin
+//      back button untuk mengembalikan ke halaman sebelumnay atau lompat ke halaman sebelumnya
         back_button.setOnClickListener {
-            val intent = Intent(this, HomeFragment::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 
